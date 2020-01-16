@@ -1,4 +1,5 @@
 Harry.SqlBuilder.Abstractions
+Harry.SqlBuilder
 Harry.SqlBuilder.Sqlite
 Harry.SqlBuilder.MySql
 Harry.SqlBuilder.SqlServer

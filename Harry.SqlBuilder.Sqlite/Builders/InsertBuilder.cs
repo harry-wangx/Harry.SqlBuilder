@@ -20,15 +20,15 @@ namespace Harry.SqlBuilder.MySql
 
         private readonly int capacity;
 
-        public ISqlBuilderFactory Factory { get; private set; }
+        public ISqlBuilder SqlBuilder { get; private set; }
 
-        internal InsertBuilder(ISqlBuilderFactory factory, string table, string schema, int capacity)
+        internal InsertBuilder(ISqlBuilder factory, string table, string schema, int capacity)
         {
             if (string.IsNullOrEmpty(table))
                 throw new ArgumentException($"{nameof(table)}不能为空", nameof(table));
             this.table = table;
             this.schema = schema;
-            this.Factory = factory;
+            this.SqlBuilder = factory;
 
             this.capacity = capacity;
         }
@@ -61,13 +61,13 @@ namespace Harry.SqlBuilder.MySql
                 }
                 var item = columns[i];
 
-                this.Factory.SqlGenerationHelper.DelimitIdentifier(sbNames, item.Name);
+                this.SqlBuilder.SqlGenerationHelper.DelimitIdentifier(sbNames, item.Name);
 
-                this.Factory.SqlGenerationHelper.GenerateParameterName(sbParams, item.Name);
+                this.SqlBuilder.SqlGenerationHelper.GenerateParameterName(sbParams, item.Name);
             }
 
             var sb = new StringBuilder("INSERT INTO ", capacity);
-            this.Factory.SqlGenerationHelper.DelimitIdentifier(sb, table, schema);
+            this.SqlBuilder.SqlGenerationHelper.DelimitIdentifier(sb, table, schema);
             sb.AppendFormat(" ({0})VALUES({1})", sbNames.ToString(), sbParams.ToString());
 
             //if (identity)

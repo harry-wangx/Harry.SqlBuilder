@@ -28,18 +28,6 @@ namespace Harry.SqlBuilder
         public virtual void GenerateParameterName(StringBuilder builder, string name)
             => builder.Append("@").Append(name);
 
-        /// <summary>
-        /// 为给定的名称生成有效的参数占位符名称
-        /// </summary>
-        public virtual string GenerateParameterNamePlaceholder(string name)
-            => GenerateParameterName(name);
-
-        /// <summary>
-        /// 将有效的参数占位符名称写入StringBuilder
-        /// </summary>
-        public virtual void GenerateParameterNamePlaceholder(StringBuilder builder, string name)
-            => GenerateParameterName(builder, name);
-
 
         /// <summary>
         /// 生成标识符（列名、表名等）的转义SQL表示

@@ -20,7 +20,7 @@ namespace Dapper
             return cnn.Execute(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
 
-#if ASYNC
+
         public static Task<int> ExecuteAsync(this IDbConnection cnn, SqlBuilderCommand cmd)
         {
             if (cnn == null)
@@ -28,10 +28,10 @@ namespace Dapper
 
             return cnn.ExecuteAsync(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
-#endif
-#endregion
 
-#region ExecuteReader
+        #endregion
+
+        #region ExecuteReader
         public static IDataReader ExecuteReader(this IDbConnection cnn, SqlBuilderCommand cmd)
         {
             if (cnn == null)
@@ -40,7 +40,6 @@ namespace Dapper
             return cnn.ExecuteReader(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
 
-#if ASYNC
         public static Task<IDataReader> ExecuteReaderAsync(this IDbConnection cnn, SqlBuilderCommand cmd)
         {
             if (cnn == null)
@@ -48,10 +47,9 @@ namespace Dapper
 
             return cnn.ExecuteReaderAsync(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
-#endif
-#endregion
+        #endregion
 
-#region ExecuteScalar
+        #region ExecuteScalar
         public static object ExecuteScalar(this IDbConnection cnn, SqlBuilderCommand cmd)
         {
             if (cnn == null)
@@ -68,7 +66,6 @@ namespace Dapper
             return cnn.ExecuteScalar<T>(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
 
-#if ASYNC
         public static Task<object> ExecuteScalarAsync(this IDbConnection cnn, SqlBuilderCommand cmd)
         {
             if (cnn == null)
@@ -84,10 +81,9 @@ namespace Dapper
 
             return cnn.ExecuteScalarAsync<T>(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
-#endif
-#endregion
+        #endregion
 
-#region Query
+        #region Query
 #if NET35
         public static IEnumerable<IDictionary<string, object>> Query(this IDbConnection cnn, SqlBuilderCommand cmd, bool buffered = true)
         {
@@ -104,7 +100,6 @@ namespace Dapper
             return cnn.Query<T>(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, buffered, cmd.CommandTimeout, cmd.CommandType);
         }
 
-#if ASYNC
         public static Task<IEnumerable<dynamic>> QueryAsync(this IDbConnection cnn, SqlBuilderCommand cmd)
         {
             return cnn.QueryAsync(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
@@ -114,8 +109,7 @@ namespace Dapper
         {
             return cnn.QueryAsync<T>(cmd.Sql, DapperHelper.CreateDynamicParameters(cmd), cmd.Transaction, cmd.CommandTimeout, cmd.CommandType);
         }
-#endif
-#endregion
+        #endregion
 
         //todo:查询
         //public static IEnumerable<T> PagedList<T>(this IDbConnection cnn, SqlBuilderCommand cmd, out int count)

@@ -2,8 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CrudOperations.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
@@ -12,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Harry.SqlBuilder.Abstractions\Harry.SqlBuilder.Abstractions.csproj" />
-    <ProjectReference Include="..\Harry.SqlBuilder.Dapper\Harry.SqlBuilder.Dapper.csproj" />
     <ProjectReference Include="..\Harry.SqlBuilder.MySql\Harry.SqlBuilder.MySql.csproj" />
     <ProjectReference Include="..\Harry.SqlBuilder.Sqlite\Harry.SqlBuilder.Sqlite.csproj" />
     <ProjectReference Include="..\Harry.SqlBuilder.SqlServer\Harry.SqlBuilder.SqlServer.csproj" />

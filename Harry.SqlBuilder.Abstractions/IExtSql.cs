@@ -4,8 +4,11 @@ using System.Text;
 
 namespace Harry.SqlBuilder
 {
-    public interface IHasSqlBuilderFactory
+    /// <summary>
+    /// 扩展sql
+    /// </summary>
+    public interface IExtSql
     {
-        ISqlBuilderFactory Factory { get; }
+
     }
 }

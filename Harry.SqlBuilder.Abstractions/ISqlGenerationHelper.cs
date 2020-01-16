@@ -26,15 +26,6 @@ namespace Harry.SqlBuilder
         /// </summary>
         void GenerateParameterName(StringBuilder builder, string name);
 
-        /// <summary>
-        /// 为给定的名称生成有效的参数占位符名称
-        /// </summary>
-        string GenerateParameterNamePlaceholder(string name);
-
-        /// <summary>
-        /// 将有效的参数占位符名称写入StringBuilder
-        /// </summary>
-        void GenerateParameterNamePlaceholder(StringBuilder builder, string name);
 
         /// <summary>
         /// 生成标准标识符

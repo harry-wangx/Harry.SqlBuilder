@@ -1,6 +1,6 @@
 ﻿namespace Harry.SqlBuilder
 {
-    public interface IRawBuilder : IToCommand, IHasSqlBuilderFactory
+    public interface IRawBuilder : IToCommand, IHasSqlBuilder
     {
         IRawBuilder Append(string sql);
 

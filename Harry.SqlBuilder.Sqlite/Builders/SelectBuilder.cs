@@ -62,13 +62,13 @@ namespace Harry.SqlBuilder.MySql
             clauses.Add(new Clause { Sql = sql, Parameters = parameters });
         }
 
-        public ISqlBuilderFactory Factory { get; private set; }
+        public ISqlBuilder SqlBuilder { get; private set; }
 
-        internal SelectBuilder(ISqlBuilderFactory factory, string field, int capacity)
+        internal SelectBuilder(ISqlBuilder factory, string field, int capacity)
         {
             this.capacity = capacity;
 
-            this.Factory = factory;
+            this.SqlBuilder = factory;
 
             AddClause("SELECT", field, null, " , ", prefix: "", postfix: "\n");
         }
@@ -76,7 +76,7 @@ namespace Harry.SqlBuilder.MySql
 
         public ISelectBuilder From(string table, string schema = null)
         {
-            AddClause("FROM", this.Factory.SqlGenerationHelper.DelimitIdentifier(table, schema), null, " , ", "", "\n");
+            AddClause("FROM", this.SqlBuilder.SqlGenerationHelper.DelimitIdentifier(table, schema), null, " , ", "", "\n");
             return this;
         }
 
@@ -198,7 +198,7 @@ namespace Harry.SqlBuilder.MySql
 
             if (page > 0)
             {
-                this.Factory.SqlGenerationHelper.GeneratePaginationSql(sb);
+                this.SqlBuilder.SqlGenerationHelper.GeneratePaginationSql(sb);
                 parameters.Add(new SqlBuilderParameter("offset", (page - 1) * size));
                 parameters.Add(new SqlBuilderParameter("limit", size));
             }

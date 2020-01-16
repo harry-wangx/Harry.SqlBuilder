@@ -11,9 +11,9 @@ namespace Sample
 {
     internal sealed class CrudOperations
     {
-        private readonly ISqlBuilderFactory builder;
+        private readonly ISqlBuilder builder;
         private readonly IDbConnection cnn;
-        public CrudOperations(IDbConnection cnn, ISqlBuilderFactory builder)
+        public CrudOperations(IDbConnection cnn, ISqlBuilder builder)
         {
             this.builder = builder;
             this.cnn = cnn;

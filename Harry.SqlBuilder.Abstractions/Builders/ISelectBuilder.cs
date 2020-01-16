@@ -2,7 +2,7 @@
 
 namespace Harry.SqlBuilder
 {
-    public interface ISelectBuilder : IWhere, IToCommand, IHasSqlBuilderFactory
+    public interface ISelectBuilder : IWhere, IToCommand, IHasSqlBuilder
     {
         ISelectBuilder From(string table, string schema = null);
 

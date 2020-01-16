@@ -18,12 +18,12 @@ namespace Harry.SqlBuilder.MySql
         private readonly List<object> lstDynamicParams = new List<object>();
         private readonly int capacity;
 
-        public ISqlBuilderFactory Factory { get; private set; }
-        internal RawBuilder(ISqlBuilderFactory factory, int capacity)
+        public ISqlBuilder SqlBuilder { get; private set; }
+        internal RawBuilder(ISqlBuilder factory, int capacity)
         {
             this.capacity = capacity;
 
-            this.Factory = factory;
+            this.SqlBuilder = factory;
         }
 
         public IRawBuilder Append(string sql)

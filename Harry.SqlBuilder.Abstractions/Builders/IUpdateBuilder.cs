@@ -1,6 +1,6 @@
 ﻿namespace Harry.SqlBuilder
 {
-    public interface IUpdateBuilder : IWhere, IToCommand, IHasSqlBuilderFactory
+    public interface IUpdateBuilder : IWhere, IToCommand, IHasSqlBuilder
     {
         IUpdateBuilder Column(string sql);
 

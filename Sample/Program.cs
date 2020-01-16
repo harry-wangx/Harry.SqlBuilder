@@ -11,8 +11,8 @@ namespace Sample
             {
                 var sqliteDbContext = new SqliteDbContext();
                 var result= sqliteDbContext.Database.EnsureCreated();
-                new CrudOperations(sqliteDbContext.Database.GetDbConnection(),
-                    new Harry.SqlBuilder.Sqlite.SqlBuilderFactory()).Test();
+                //new CrudOperations(sqliteDbContext.Database.GetDbConnection(),
+                //    new Harry.SqlBuilder.Sqlite.SqlBuilder()).Test();
             }
             catch (Exception ex)
             {
