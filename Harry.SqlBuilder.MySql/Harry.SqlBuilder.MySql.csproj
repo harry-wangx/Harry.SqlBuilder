@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;netstandard2.0;net40</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);MYSQL</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Harry.SqlBuilder.Sqlite\DeleteBuilder.cs" Link="DeleteBuilder.cs" />
+    <Compile Include="..\Harry.SqlBuilder.Sqlite\InsertBuilder.cs" Link="InsertBuilder.cs" />
+    <Compile Include="..\Harry.SqlBuilder.Sqlite\RawBuilder.cs" Link="RawBuilder.cs" />
+    <Compile Include="..\Harry.SqlBuilder.Sqlite\SelectBuilder.cs" Link="SelectBuilder.cs" />
+    <Compile Include="..\Harry.SqlBuilder.Sqlite\SqlBuilderFactory.cs" Link="SqlBuilderFactory.cs" />
+    <Compile Include="..\Harry.SqlBuilder.Sqlite\UpdateBuilder.cs" Link="UpdateBuilder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Harry.SqlBuilder.Abstractions\Harry.SqlBuilder.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

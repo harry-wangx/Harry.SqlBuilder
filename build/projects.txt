@@ -1,0 +1,5 @@
+Harry.SqlBuilder.Abstractions
+Harry.SqlBuilder.Sqlite
+Harry.SqlBuilder.MySql
+Harry.SqlBuilder.SqlServer
+Harry.SqlBuilder.Dapper

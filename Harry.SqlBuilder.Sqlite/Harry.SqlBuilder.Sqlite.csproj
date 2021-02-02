@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;netstandard2.0;net40</TargetFrameworks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Harry.SqlBuilder.Abstractions\Harry.SqlBuilder.Abstractions.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);SQLITE</DefineConstants>
+  </PropertyGroup>
+
+</Project>
