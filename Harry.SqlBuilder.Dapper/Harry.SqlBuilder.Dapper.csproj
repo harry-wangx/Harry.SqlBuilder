@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0;netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;netstandard2.1;net461;net5.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net461'">
@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper.StrongName" Version="2.0.30" />
+    <PackageReference Include="Dapper.StrongName" Version="2.0.78" />
   </ItemGroup>
 
   <ItemGroup>

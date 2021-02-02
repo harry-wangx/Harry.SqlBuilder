@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0;netstandard2.0;net461</TargetFrameworks>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.1;netstandard2.1;net461;net5.0</TargetFrameworks>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <DefineConstants>$(DefineConstants);MYSQL</DefineConstants>
-  </PropertyGroup>
+	<PropertyGroup>
+		<DefineConstants>$(DefineConstants);MYSQL</DefineConstants>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\DeleteBuilder.cs" Link="Builders\DeleteBuilder.cs" />
-    <Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\InsertBuilder.cs" Link="Builders\InsertBuilder.cs" />
-    <Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\RawBuilder.cs" Link="Builders\RawBuilder.cs" />
-    <Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\SelectBuilder.cs" Link="Builders\SelectBuilder.cs" />
-    <Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\UpdateBuilder.cs" Link="Builders\UpdateBuilder.cs" />
-    <Compile Include="..\Harry.SqlBuilder.Sqlite\SqlBuilder.cs" Link="SqlBuilder.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\DeleteBuilder.cs" Link="Builders\DeleteBuilder.cs" />
+		<Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\InsertBuilder.cs" Link="Builders\InsertBuilder.cs" />
+		<Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\RawBuilder.cs" Link="Builders\RawBuilder.cs" />
+		<Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\SelectBuilder.cs" Link="Builders\SelectBuilder.cs" />
+		<Compile Include="..\Harry.SqlBuilder.Sqlite\Builders\UpdateBuilder.cs" Link="Builders\UpdateBuilder.cs" />
+		<Compile Include="..\Harry.SqlBuilder.Sqlite\SqlBuilder.cs" Link="SqlBuilder.cs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Builders\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Builders\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Harry.SqlBuilder\Harry.SqlBuilder.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Harry.SqlBuilder\Harry.SqlBuilder.csproj" />
+	</ItemGroup>
 
 </Project>
